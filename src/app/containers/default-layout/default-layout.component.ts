@@ -9,7 +9,7 @@ export class DefaultLayoutComponent {
   public sidebarMinimized = false;
   public navItems = navItems;
 
-  toggleMinimize(e) {
-    this.sidebarMinimized = e;
+  toggleMinimize(event) {
+    this.sidebarMinimized = event;
   }
 }
