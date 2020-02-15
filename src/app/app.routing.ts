@@ -7,10 +7,41 @@ import {DefaultLayoutComponent} from './containers';
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'reading',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: DefaultLayoutComponent,
     data: {
       title: 'Home'
     },
+    children: [
+      {
+        path: 'listening',
+        loadChildren: () => import('./views/listening/listening.module').then(m => m.ListeningModule)
+      },
+      {
+        path: 'reading',
+        loadChildren: () => import('./views/reading/reading.module').then(m => m.ReadingModule)
+      },
+      {
+        path: 'writing',
+        loadChildren: () => import('./views/writing/writing.module').then(m => m.WritingModule)
+      },
+      {
+        path: 'speaking',
+        loadChildren: () => import('./views/speaking/speaking.module').then(m => m.SpeakingModule)
+      },
+      {
+        path: 'grammar',
+        loadChildren: () => import('./views/grammar/grammar.module').then(m => m.GrammarModule)
+      },
+      {
+        path: 'vocabulary',
+        loadChildren: () => import('./views/vocabulary/vocabulary.module').then(m => m.VocabularyModule)
+      }
+    ]
   }
 ];
 
