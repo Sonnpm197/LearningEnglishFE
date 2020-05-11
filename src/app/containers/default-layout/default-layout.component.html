@@ -57,10 +57,14 @@
 <!--Start of body-->
 <div class="app-body">
   <!--  toggleMinimize: The small arrow button on the bottom left hand side to minimise the sidebar -->
-  <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized"
+  <app-sidebar #appSidebar
+               [fixed]="true"
+               [display]="'lg'"
+               [minimized]="sidebarMinimized"
                (minimizedChange)="toggleMinimize($event)">
     <!--    This is the real content of this sidebar-->
-    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar]
+    <app-sidebar-nav [navItems]="navItems"
+                     [perfectScrollbar]
                      [disabled]="appSidebar.minimized">
     </app-sidebar-nav>
     <!--    Small arrow icon to collapse this side bar-->

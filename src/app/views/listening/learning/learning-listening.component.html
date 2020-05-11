@@ -1,0 +1,35 @@
+<div class="form-group">
+  <label class="col-form-label">Search Youtube videos</label>
+  <div class="controls">
+    <div class="input-group">
+      <search-bar-component
+        (searchResults)="setSearchResults($event)"
+        [testPassingProp]="testPassingProp"
+        [testPassingObject]="testPassingObject"
+      ></search-bar-component>
+      <span class="input-group-append">
+        <button class="btn btn-secondary" type="button"
+                (click)="searchResultComponent.refreshSearchResults()">Refresh</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!--<button (click)="changePassingObject()">Click to test onpush on object properties</button>-->
+
+<!--This is view child:-->
+<!--Any component that’s nested inside another’s template is called a View Child-->
+<search-results-component [testPassingProp]="testPassingProp"
+                          [testPassingObject]="testPassingObject"
+                          [searchResults]="searchResults" #searchResultComponent>
+  <!--Content Child components are these components are inserted as content-->
+  <!--inside the component rather than being directly declared in the template-->
+  <search-results-content-child></search-results-content-child>
+
+  <!--You can even insert message and show by <ng-content select = "message-for-ngcontent-select"-->
+  <!--Remember to import NO_ERROR_SCHEMA in module-->
+  <message-for-ng-content-select>
+    Listen and try to understand the conversation
+  </message-for-ng-content-select>
+</search-results-component>
+

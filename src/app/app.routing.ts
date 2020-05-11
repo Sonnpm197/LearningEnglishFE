@@ -3,19 +3,25 @@ import {Routes, RouterModule} from '@angular/router';
 
 // Import Containers
 import {DefaultLayoutComponent} from './containers';
+import {AddQuizletComponent} from './views/reading/quizlet/add-quizlet.component';
+import {LoginComponent} from './views/login/login.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'reading',
+    redirectTo: 'speaking',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login Page'
+    }
   },
   {
     path: '',
     component: DefaultLayoutComponent,
-    data: {
-      title: 'Home'
-    },
     children: [
       {
         path: 'listening',

@@ -7,103 +7,103 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Listening',
-    url: '/base',
-    icon: 'icon-puzzle',
+    url: '',
+    icon: 'icon-earphones',
     children: [
       {
         name: 'Learn',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
+        url: '/listening/learning',
+        icon: 'icon-question'
       },
       {
         name: 'Test',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
+        url: '/listening/testing',
+        icon: 'icon-graduation'
       }
     ]
   },
   {
     name: 'Reading',
-    url: '/base',
-    icon: 'icon-puzzle',
+    url: '',
+    icon: 'icon-book-open',
     children: [
       {
         name: 'Learn',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
+        url: '/reading/learning',
+        icon: 'icon-question'
       },
       {
         name: 'Test',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
+        url: '/reading/testing',
+        icon: 'icon-graduation'
       }
     ]
   },
   {
     name: 'Writing',
-    url: '/base',
-    icon: 'icon-puzzle',
+    url: '',
+    icon: 'icon-pencil',
     children: [
       {
         name: 'Learn',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
+        url: '/writing/learning',
+        icon: 'icon-question'
       },
       {
         name: 'Test',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
+        url: '/writing/testing',
+        icon: 'icon-graduation'
       }
     ]
   },
   {
     name: 'Speaking',
-    url: '/base',
-    icon: 'icon-puzzle',
+    url: '',
+    icon: 'icon-speech',
     children: [
       {
         name: 'Learn',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
+        url: '/speaking/learning',
+        icon: 'icon-question'
       },
       {
         name: 'Test',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
+        url: '/speaking/testing',
+        icon: 'icon-graduation'
       }
     ]
   },
   {
     name: 'Grammar',
-    url: '/base',
-    icon: 'icon-puzzle',
+    url: '',
+    icon: 'icon-user-following',
     children: [
       {
         name: 'Learn',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
+        url: '/grammar/learning',
+        icon: 'icon-question'
       },
       {
         name: 'Test',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
+        url: '/grammar/testing',
+        icon: 'icon-graduation'
       }
     ]
   },
   {
     name: 'Vocabulary',
-    url: '/base',
-    icon: 'icon-puzzle',
+    url: '',
+    icon: 'icon-eyeglass',
     children: [
       {
         name: 'Learn',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
+        url: '/vocabulary/learning',
+        icon: 'icon-question'
       },
       {
         name: 'Test',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
+        url: '/vocabulary/testing',
+        icon: 'icon-graduation'
       }
     ]
   }

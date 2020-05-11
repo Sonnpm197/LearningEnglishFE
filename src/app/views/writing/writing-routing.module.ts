@@ -2,6 +2,7 @@ import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {LearningWritingComponent} from "./learning-writing.component";
 import {TestingWritingComponent} from "./testing-writing.component";
+import {LoggedInGuard} from "../../services/logged-in.guard";
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'testing',
-    component: TestingWritingComponent
+    component: TestingWritingComponent,
+    canActivate: [LoggedInGuard]
   }
 ];
 

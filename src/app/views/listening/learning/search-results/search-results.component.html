@@ -1,0 +1,27 @@
+<!--What is passed through here is a content child-->
+<!--search-result-content-child will be passed into here-->
+<ng-content></ng-content>
+
+<ng-content select="message-for-ng-content-select"></ng-content>
+
+<!--<div>-->
+  <!--{{testPassingObject.title}}-->
+<!--</div>-->
+
+<ng-template #refreshPopUp></ng-template>
+<button *ngIf="refreshComponentRef && refreshComponentRef.instance != null" (click)="closeRefreshPopUp()">Close</button>
+
+<div class="row">
+  <div class="col-lg-3" *ngFor="let youtubeResponseDTO of searchResults">
+    <div class="card">
+      <div class="card-header">
+        {{youtubeResponseDTO.title}}
+      </div>
+      <div class="card-body">
+        <img [src]="youtubeResponseDTO.thumbnailUrl">
+        <a [href]="youtubeResponseDTO.videoUrl">{{youtubeResponseDTO.videoUrl}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+

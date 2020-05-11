@@ -25,6 +25,13 @@ import {AppRoutingModule} from './app.routing';
 import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import {TabsModule} from 'ngx-bootstrap/tabs';
 import {ChartsModule} from 'ng2-charts';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {LoggedInGuard} from './services/logged-in.guard';
+import {AuthenService} from './services/authen.service';
+import {CKEditorModule} from 'ckeditor4-angular';
+import {RequestInterceptor} from './interceptors/request.interceptor';
+import {AddQuizletComponent} from './views/reading/quizlet/add-quizlet.component';
+import {LoginComponent} from './views/login/login.component';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -56,15 +63,28 @@ const APP_CONTAINERS = [
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
 
+    HttpClientModule,
+
     // ng2-charts
-    ChartsModule
+    ChartsModule,
+
+    CKEditorModule,
+
   ],
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
+    LoginComponent
   ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    LoggedInGuard,
+    AuthenService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true // allow multi interceptors
+    }
   ],
   bootstrap: [AppComponent]
 })

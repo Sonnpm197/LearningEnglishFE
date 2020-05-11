@@ -1,0 +1,35 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Reading Tests
+          <button type="button" class="btn btn-sm btn-primary" (click)="openRefreshPopUp()">
+            Refresh
+          </button>
+        </div>
+
+        <!--A pop-up will be generated here-->
+        <template ngbModalContainer></template>
+
+        <div class="card-body">
+          <table class="table" reading-table-data [headers]="headers">
+            <!--Note that myCurrentPage and reading are input properties of reading-table-row-->
+            <tr reading-table-row-data
+                *ngFor="let reading of readingTests
+                        | paginate: { itemsPerPage: 5, currentPage: myCurrentPage }"
+                [myCurrentPage]="myCurrentPage"
+                [reading]="reading"
+            >
+            </tr>
+          </table>
+          <div class="row">
+            <div class="has-text-centered">
+              <pagination-controls (pageChange)="myCurrentPage = $event"></pagination-controls>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
